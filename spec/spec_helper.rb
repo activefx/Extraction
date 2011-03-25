@@ -1,6 +1,11 @@
+require 'bundler'
+Bundler.setup(:default, :test)
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'rspec'
+require 'rspec/autorun'
 require 'extraction'
 
 # Requires supporting files with custom matchers and macros, etc,
@@ -8,5 +13,6 @@ require 'extraction'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  
+  config.mock_with :mocha
 end
+

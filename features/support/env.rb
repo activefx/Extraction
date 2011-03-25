@@ -10,4 +10,8 @@ end
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../../lib')
 require 'extraction'
 
-require 'rspec/expectations'
+require 'rspec'
+#require 'rspec/expectations'
+
+World(RSpec::Matchers)
+
