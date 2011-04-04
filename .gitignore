@@ -1,5 +1,7 @@
 .DS_STORE
 
+Gemfile.lock
+
 # rcov generated
 coverage
 

@@ -9,20 +9,35 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
+require File.expand_path('../lib/extraction/version', __FILE__)
+
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "extraction"
   gem.homepage = "http://github.com/activefx/extraction"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.version = Extraction::VERSION
+  gem.summary = %Q{ActiveModel based (web) data extraction library. Work in progress.}
+  gem.description = %Q{ActiveModel based (web) data extraction library. Work in progress.}
   gem.email = "mattsolt@gmail.com"
   gem.authors = ["Matt Solt"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency      'activemodel',  '>= 3.0.5'
+  gem.add_development_dependency  'rspec',        '>= 2.5.0'
+  gem.add_development_dependency  'cucumber',     '>= 0.10.2'
+  gem.add_development_dependency  'autotest',     '>= 4.4.6'
+  gem.add_development_dependency  'vcr',          '>= 1.7.2'
+  gem.add_development_dependency  'yard',         '>= 0.6.0'
+  gem.add_development_dependency  'bundler',      '>= 1.0.10'
+  gem.add_development_dependency  'jeweler',      '>= 1.5.2'
+  gem.add_development_dependency  'nokogiri',     '>= 1.4.4'
+  gem.add_development_dependency  'hpricot',      '>= 0.8.4'
+  gem.add_development_dependency  'lumberjack',   '>= 1.0.0'
+  gem.add_development_dependency  'fakeweb',      '>= 1.3.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -44,3 +59,4 @@ task :default => :spec
 
 require 'yard'
 YARD::Rake::YardocTask.new
+
